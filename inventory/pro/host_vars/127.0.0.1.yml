@@ -1,0 +1,3 @@
+# Kibana-Konfiguration für kibana-server-1
+elasticsearch_host: elasticsearch-server-1.example.com
+cluster_node: master

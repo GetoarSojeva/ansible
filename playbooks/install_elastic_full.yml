@@ -1,0 +1,23 @@
+---
+- name: Deploy Kibana Configuration
+  hosts: logstash_server, elasticsearch_server, kibana_server
+  become: yes
+
+  roles:
+    - kibana
+    - elasticsearch
+
+
+
+
+      #  tasks: 
+      #    - name: Ensure Elasticsearch service is running
+      #      service:
+      #        name: elasticsearch
+      #        state: started
+
+
+      #    - name: Ensure Kibana service is running
+      #      service:
+      #        name: kibana
+      #        state: started

@@ -1,0 +1,11 @@
+---
+
+- name: Copy elasticsearch.yml.j2 to target server
+  template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+
+      #- name: Restart Elasticsearch service
+      #  service:
+      #    name: elasticsearch
+      #    state: restarted

@@ -1,0 +1,6 @@
+# Kibana-Konfiguration für kibana-server-2
+kibana_port: 5601
+kibana_host: 0.0.0.0
+elasticsearch_host: elasticsearch-server-2.example.com
+elasticsearch_port: 9200
+

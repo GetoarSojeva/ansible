@@ -1,0 +1,11 @@
+---
+- name: Copy kibana.yml.j2 to target server
+  template:
+    src: kibana.yml.j2
+    dest: /etc/kibana/kibana.yml
+
+
+- name: Ensure Kibana service is running
+  service:
+    name: kibana
+    state: started

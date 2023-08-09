@@ -1,0 +1,11 @@
+# Kibana-Konfigurationsdatei
+
+server.port: {{ kibana_port }}
+server.host: {{ kibana_host }}
+elasticsearch.hosts: ["{{ elasticsearch_host }}:{{ elasticsearch_port }}"]
+elasticsearch.username: kibana
+elasticsearch.password: {{ kibana_password }}
+
+cluster: {{ cluster_node }}
+
+stage: {{ stage }}
