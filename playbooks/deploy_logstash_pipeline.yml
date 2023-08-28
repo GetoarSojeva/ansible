@@ -1,18 +1,8 @@
 ---
 
-# - name: Deploy Logstash Configuration
-#   hosts: logstash_server
-#   become: 'yes'
-
-#   roles:
-#     - pipeline
-
-
-- name: Copy kibana.yml.j2 to target server
+- name: Deploy Logstash Configuration
   hosts: logstash_server
   become: 'yes'
-  tasks:
-    - name: copy
-      template:
-        src: logstash_sample.conf.j2
-        dest: /etc/logstash/conf.d/logstash_sample.conf
+
+  roles:
+    - pipeline
