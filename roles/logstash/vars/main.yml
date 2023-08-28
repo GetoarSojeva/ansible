@@ -1,4 +1,3 @@
 ---
 # Allgemeine bzw. System- oder Umgebungsunabhängige Einstellungen für den Logstash
-path_config: /path/to/config
 logstash_config_path: /etc/logstash
