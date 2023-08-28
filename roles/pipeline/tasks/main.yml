@@ -1,6 +1,0 @@
----
-
-- name: Copy kibana.yml.j2 to target server
-  template:
-    src: logstash_sample.conf.j2
-    dest: /etc/logstash/conf.d/logstash_sample.conf
