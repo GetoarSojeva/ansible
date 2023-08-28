@@ -1,2 +1,4 @@
+---
+
 input_port: 5044
 logstash_config: /usr/local/etc/logstash
