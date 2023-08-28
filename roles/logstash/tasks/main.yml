@@ -2,25 +2,25 @@
 
 - name: Copy logstash.yml.j2 to target server
   template:
-    src: logstash.yml.j2
-    dest: {{ logstash_config_path }}/logstash.yml
+    src: logstash.yml.j2"
+    dest: "{{ logstash_config_path }}/logstash.yml"
 
 - name: Copy pipeline.yml.j2 to target server
   template:
     src: pipleline.yml.j2
-    dest: {{ logstash_config_path }}/pipeline.yml
+    dest: "{{ logstash_config_path }}/pipeline.yml"
 
 - name: Copy log4j2.properties to target server
   template:
     src: log4j2.properties
-    dest: {{ logstash_config_path }}/log4j2.properties
+    dest: "{{ logstash_config_path }}/log4j2.properties"
 
 - name: Copy jvm.options to target server
   template:
     src: jvm.options
-    dest: {{ logstash_config_path }}/jvm.options
+    dest: "{{ logstash_config_path }}/jvm.options"
 
 - name: Copy startup.options to target server
   template:
     src: startup.options
-    dest: {{ logstash_config_path }}/startup.options
+    dest: "{{ logstash_config_path }}/startup.options"
