@@ -4,6 +4,5 @@
   template:
     src: "{{ item }}"
     dest: "{{logstash_config_path}}/conf.d/{{ item | regex_replace('.j2$', '') }}"
-  loop:
-    - logstash_sample.conf.j2
-    - logstash_sample2.conf.j2
+  loop: "{{ logstash_main_pipeline }}"
+
