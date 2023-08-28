@@ -12,6 +12,6 @@
   template:
     src: "{{ item }}"
     dest: "{{logstash_config_path}}/conf.d/{{ item | regex_replace('.j2$', '') }}"
-  loop: "{{ templates | basename }}"
+  loop: "{{ templates | map('basename') }}"
   vars:
     templates: "{{ lookup('fileglob', 'templates/*.j2', wantlist=True) }}"
