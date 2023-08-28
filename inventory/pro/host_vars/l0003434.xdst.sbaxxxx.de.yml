@@ -1,0 +1,8 @@
+# Kibana-Konfiguration für l0003434
+elasticsearch_host: l0003434.xdst.sbaxxxx.de
+node_master: true
+node_data: false
+
+network_host: 192.168.0.2
+transport_tcp_port: 9300
+http_port: 9200

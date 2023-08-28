@@ -1,0 +1,8 @@
+---
+
+- name: Kopiere Template-Dateien
+  template:
+    src: "{{ item }}"
+    dest: /pfad/auf/den/zielhost/
+  with_fileglob:
+    - templates/*.j2

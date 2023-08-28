@@ -5,7 +5,41 @@
     src: logstash.yml.j2
     dest: /etc/logstash/logstash.yml
 
-- name: Restart Logstash service
-  service:
-    name: logstash
-    state: restarted
+- name: Copy pipeline.yml.j2 to target server
+  template:
+    src: pipleline.yml.j2
+    dest: /etc/logstash/pipleline.yml
+
+- name: Copy log4j2.properties to target server
+  template:
+    src: log4j2.properties
+    dest: /etc/logstash/log4j2.properties
+
+- name: Copy jvm.options to target server
+  template:
+    src: jvm.options
+    dest: /etc/logstash/jvm.options
+
+- name: Copy startup.options to target server
+  template:
+    src: startup.options
+    dest: /etc/logstash/startup.options
+
+  tasks:
+    - name: Stoppe Logstash-Dienst
+      systemd:
+        name: logstash
+        state: stopped
+      register: stopped_result
+      ignore_errors: yes  # Ignoriere Fehler, falls der Dienst bereits gestoppt ist
+
+    - name: Warte auf vollständiges Stoppen von Logstash
+      wait_for:
+        path: /var/run/logstash.pid
+        state: absent
+      when: stopped_result.changed  # Nur warten, wenn der Dienst tatsächlich gestoppt wurde
+
+    - name: Starte Logstash-Dienst
+      systemd:
+        name: logstash
+        state: started
