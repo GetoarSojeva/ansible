@@ -19,6 +19,6 @@
 - name: Copy Template Files to Destination
   copy:
     src: "{{ item }}"
-    dest: "{{logstash_config_path}}/conf.d/{{ item | regex_replace('.j2$', '') }}"
+    dest: "{{logstash_config_path}}/conf.d/{{ item | basename | regex_replace('.j2$', '') }}"
   with_fileglob:
     - "/root/ansible/roles/pipeline/templates/*.j2"
