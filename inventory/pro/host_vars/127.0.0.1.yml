@@ -1,3 +1,8 @@
-# Kibana-Konfiguration für kibana-server-1
-elasticsearch_host: elasticsearch-server-1.example.com
-cluster_node: master
+# Kibana-Konfiguration für 127.0.0.1
+elasticsearch_host: 127.0.0.1.xdst.sbaxxxx.de
+node_master: true
+node_data: false
+
+network_host: 192.168.0.2
+transport_tcp_port: 9300
+http_port: 9200
