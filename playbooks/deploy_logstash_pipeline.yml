@@ -6,27 +6,3 @@
 
   roles:
     - pipeline
-
-  tasks:
-    - name: Kopiere Template-Dateien
-      template:
-        dest: "{{ logstash_config }}/conf.d/"
-        src: {{ item }}
-      with_fileglob:
-        - templates/*.j2
-  # tasks:
-  #   - name: Stoppe Logstash-Dienst
-  #     systemd:
-  #       name: logstash
-  #       state: stopped
-  #     register: stopped_result
-  #     ignore_errors: 'yes'
-  #   - name: Warte auf vollständiges Stoppen von Logstash
-  #     wait_for:
-  #       path: /var/run/logstash.pid
-  #       state: absent
-  #     when: stopped_result.changed
-  #   - name: Starte Logstash-Dienst
-  #     systemd:
-  #       name: logstash
-  #       state: started

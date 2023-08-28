@@ -1,14 +1,6 @@
 ---
 
-- name: Kopiere Template-Dateien
+- name: Copy kibana.yml.j2 to target server
   template:
-    dest: "{{ logstash_config }}/conf.d/"
-    src: {{ item }}
-  with_fileglob:
-    - templates/*.j2
-
-# ---
-# - name: Copy kibana.yml.j2 to target server
-#   template:
-#     src: logstash_sample.conf.j2
-#     dest: /etc/logstash/conf.d/logstash_sample.conf
+    src: logstash_sample.conf.j2
+    dest: /etc/logstash/conf.d/logstash_sample.conf
