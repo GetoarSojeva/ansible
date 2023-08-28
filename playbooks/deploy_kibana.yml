@@ -1,0 +1,18 @@
+---
+- name: Deploy Kibana Configuration
+  hosts: kibana_server
+  become: yes
+
+  roles:
+    - kibana
+
+  tasks:
+  - name: Stoppe Kibana-Dienst
+    systemd:
+      name: kibana
+      state: stopped
+
+  - name: Starte Kibana-Dienst
+    systemd:
+      name: kibana
+      state: started
