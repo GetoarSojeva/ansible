@@ -12,5 +12,5 @@
       template:
         src: "{{ item }}"
         dest: "{{logstash_config_path}}/conf.d/{{{ item | basename }}"
-      loop: "{{ lookup('fileglob', 'roles/pipeline/templates/*.j2') }}"
+      loop: "{{ lookup('fileglob', 'root/ansible/roles/pipeline/templates/*.j2') }}"
 
