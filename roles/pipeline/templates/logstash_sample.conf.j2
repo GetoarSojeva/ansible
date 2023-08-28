@@ -3,15 +3,15 @@
 
 input {
   beats {
-    port => "{{ input_port }}"
+    port => {{ input_port }}
   }
 }
 
 output {
   elasticsearch {
     # Die hosts werden so aus der hosts.ini extrahiert. 
-    hosts => [ "127.0.0.1" ]
-    index => "INDEXNAME"
+    hosts => [ {{ groups['elasticsearch_server'] | map('quote') | join(',') }} ]
+    index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
     user => "elastic"
     password => {{ elasticsearch_password }}
   }
