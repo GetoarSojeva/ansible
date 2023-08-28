@@ -1,4 +1,7 @@
 ---
 # Allgemeine Einstellungen für Elasticsearch
 
-elasticsearch_config_path: /etc/elasticsearch
+path_config: /etc/elasticsearch
+
+path_data: /var/lib/elasticsearch
+path_logs: /var/log/elasticsearch

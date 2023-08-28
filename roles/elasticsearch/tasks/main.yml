@@ -3,16 +3,16 @@
 - name: Copy elasticsearch.yml.j2 to target server
   template:
     src: "elasticsearch.yml.j2"
-    dest: "{{ elasticsearch_config_path }}/elasticsearch.yml"
+    dest: "{{ path_config }}/elasticsearch.yml"
 
 - name: Copy log4j2.properties to target server
   template:
     src: "log4j2.properties.j2"
-    dest: "{{ elasticsearch_config_path }}/log4j2.properties"
+    dest: "{{ path_config }}/log4j2.properties"
 
 - name: Copy jvm.options to target server
   template:
     src: "jvm.options.j2"
-    dest: "{{ elasticsearch_config_path }}/jvm.options"
+    dest: "{{ path_config }}/jvm.options"
 
 

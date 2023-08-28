@@ -1,9 +1,9 @@
 ---
 
 input_port: 5044
-logstash_config_path: "/etc/logstash"
+path_config: "/etc/logstash"
 elastic_user: "elastic"
 
-logstash_main_pipeline:
+main_pipeline:
     - logstash_sample.conf.j2
     - logstash_sample2.conf.j2
