@@ -1,4 +1,4 @@
 ---
 # Allgemeine Einstellungen für Elasticsearch
 
-path_conf: /path/to/conf
+elasticsearch_config_path: /etc/elasticsearch

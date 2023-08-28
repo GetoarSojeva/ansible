@@ -12,15 +12,15 @@
 
 - name: Copy log4j2.properties to target server
   template:
-    src: "log4j2.properties"
+    src: "log4j2.properties.j2"
     dest: "{{ logstash_config_path }}/log4j2.properties"
 
 - name: Copy jvm.options to target server
   template:
-    src: "jvm.options"
+    src: "jvm.options.j2"
     dest: "{{ logstash_config_path }}/jvm.options"
 
 - name: Copy startup.options to target server
   template:
-    src: "startup.options"
+    src: "startup.options.j2"
     dest: "{{ logstash_config_path }}/startup.options"
