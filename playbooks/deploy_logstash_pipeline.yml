@@ -6,3 +6,22 @@
 
   roles:
     - pipeline
+
+  tasks:
+  - name: Stoppe Logstash-Dienst
+    systemd:
+      name: logstash
+      state: stopped
+    register: stopped_result
+    ignore_errors: yes  # Ignoriere Fehler, falls der Dienst bereits gestoppt ist
+
+  - name: Warte auf vollständiges Stoppen von Logstash
+    wait_for:
+      path: /var/run/logstash.pid
+      state: absent
+    when: stopped_result.changed  # Nur warten, wenn der Dienst tatsächlich gestoppt wurde
+
+  - name: Starte Logstash-Dienst
+    systemd:
+      name: logstash
+      state: started
