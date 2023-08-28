@@ -1,4 +1,5 @@
 ---
 
 input_port: 5044
-logstash_config: "/etc/logstash"
+logstash_config_path: "/etc/logstash"
+elastic_user: "elastic"
