@@ -3,6 +3,6 @@
 - name: Kopiere Template-Dateien
   template:
     src: "{{ item }}"
-    dest: /pfad/auf/den/zielhost/
+    dest: /etc/logstash/conf/conf.d/
   with_fileglob:
     - templates/*.j2
