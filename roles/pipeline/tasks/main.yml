@@ -3,12 +3,12 @@
 
 - name: Find Jinja2 Template Files
   find:
-    paths: /roles/pipeline/templates
+    paths: roles/pipeline/templates
     patterns: "*.j2"
   register: template_files
 
 - name: Copy Template Files without .j2 extension
   template:
     src: "{{ item }}"
-    dest: /path/to/destination/{{ item.path | basename | regex_replace('.j2$', '') }}
+    dest: {{logstash_config_path }}/conf.d/{{ item | basename | regex_replace('.j2$', '') }}
   loop: "{{ template_files.files }}"
