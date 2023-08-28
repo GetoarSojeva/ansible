@@ -1,4 +1,5 @@
 ---
+
 - name: Deploy Logstash Configuration
   hosts: logstash_server
   become: 'yes'
