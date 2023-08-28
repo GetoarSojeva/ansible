@@ -1,6 +1,6 @@
 ---
 
-- name: Copy logstash.yml.j2 to target server
+- name: Copy elasticsearch.yml.j2 to target server
   template:
     src: "elasticsearch.yml.j2"
     dest: "{{ elasticsearch_config_path }}/elasticsearch.yml"
@@ -14,3 +14,5 @@
   template:
     src: "jvm.options.j2"
     dest: "{{ elasticsearch_config_path }}/jvm.options"
+
+
