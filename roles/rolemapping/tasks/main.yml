@@ -1,0 +1,13 @@
+---
+
+- name: Copy role_mapping.yml.j2 to target server
+  template:
+    src: "role_mapping.yml.j2"
+    dest: "{{ path_config }}/role_mapping.yml"
+
+- name: Copy roles.yml.j2 to target server
+  template:
+    src: "roles.yml.j2"
+    dest: "{{ path_config }}/roles.yml"
+
+
